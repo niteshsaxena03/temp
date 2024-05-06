@@ -1,10 +1,15 @@
 import React from "react";
-import { Text, View,StyleSheet } from "react-native";
+import { Text, View,StyleSheet, Button } from "react-native";
 
-function HomeScreen() {
+function HomeScreen({navigation}) {
+  function HomeScreenNavigator(){
+    navigation.navigate('HomeScreenItems');
+  }
+
   return (
     <View style={styles.outerContainer}>
       <Text style={styles.text}>This is the Home Screen</Text>
+      <Button title="Home Screen Items" onPress={HomeScreenNavigator}/>
     </View>
   );
 }
@@ -16,7 +21,7 @@ const styles = StyleSheet.create({
     flex: 1,
     height: "100%",
     width: "100%",
-    backgroundColor: "red",
+    backgroundColor: "#FF8C00",
     justifyContent: "center",
     alignItems: "center",
   },

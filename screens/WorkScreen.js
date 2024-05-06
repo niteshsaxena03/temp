@@ -1,10 +1,14 @@
 import React from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, Button } from "react-native";
 
-function WorkScreen() {
+function WorkScreen({navigation}) {
+  function WorkScreenNavigator(){
+    navigation.navigate('WorkScreenItems');
+  }
   return (
     <View style={styles.outerContainer}>
       <Text style={styles.text}>This is the Work screen</Text>
+      <Button title="Work Screen Items" onPress={WorkScreenNavigator}/>
     </View>
   );
 }
