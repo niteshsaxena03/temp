@@ -4,7 +4,7 @@ import { Text, View,StyleSheet } from "react-native";
 function HomeScreen() {
   return (
     <View style={styles.outerContainer}>
-      <Text>This is the home screen</Text>
+      <Text style={styles.text}>This is the Home Screen</Text>
     </View>
   );
 }
@@ -14,10 +14,15 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   outerContainer: {
     flex: 1,
-    height: "50%",
-    width: "50%",
-    backgroundColor: "#fff",
+    height: "100%",
+    width: "100%",
+    backgroundColor: "red",
     justifyContent: "center",
     alignItems: "center",
   },
+  text:{
+    fontWeight:'bold',
+    color:'#000',
+    fontSize:20,
+  }
 });
