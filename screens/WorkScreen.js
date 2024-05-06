@@ -7,7 +7,7 @@ function WorkScreen({navigation}) {
   }
   return (
     <View style={styles.outerContainer}>
-      <Text style={styles.text}>This is the Work screen</Text>
+      <Text style={styles.text}>This is the Work Screen</Text>
       <Button title="Work Screen Items" onPress={WorkScreenNavigator}/>
     </View>
   );

@@ -51,7 +51,11 @@ const WorkStack = () => {
 export default function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator
+        screenOptions={{
+          tabBarStyle: { backgroundColor: "#FFC0CB" }, // Yellow color
+        }}
+      >
         <Tab.Screen
           name="Home Screen"
           component={HomeStack}
@@ -71,9 +75,9 @@ export default function App() {
             tabBarIcon: ({ color, size }) => (
               <MaterialIcons name="work" size={size} color={color} />
             ),
-            headerStyle:{
-              backgroundColor:"#FFD700",
-            }
+            headerStyle: {
+              backgroundColor: "#FFD700",
+            },
           }}
         />
       </Tab.Navigator>
