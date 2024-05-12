@@ -53,7 +53,7 @@ export default function App() {
     <NavigationContainer>
       <Tab.Navigator
         screenOptions={{
-          tabBarStyle: { backgroundColor: "#FFC0CB" }, // Yellow color
+          tabBarStyle: { backgroundColor: "#FFC0CB" }, 
         }}
       >
         <Tab.Screen
