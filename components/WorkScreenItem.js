@@ -1,22 +1,24 @@
-import { Text, View, StyleSheet } from "react-native";
-import FavouriteSymbol from "./FavouriteSymbol";
+import { StyleSheet, Text, View } from "react-native";
 
-function HomeScreenItem({children}) {
+function WorkScreenItem({ children }) {
   return (
-    <View style={styles.itemContainer}>
+    <View style={styles.outerContainer}>
       <Text style={styles.textContainer}>{children}</Text>
-      <FavouriteSymbol/>
     </View>
   );
 }
 
+export default WorkScreenItem;
+
 const styles = StyleSheet.create({
-  itemContainer: {
+  outerContainer: {
     flex: 1,
-    flexDirection:'row',
-    backgroundColor: "#BE0D2D",
-    borderRadius: 5,
+    height:'60%',
+    width:'60%',
+    backgroundColor: "blue",
+    borderRadius:100,
     marginVertical: 8,
+    marginLeft:'20%',
     paddingHorizontal: 16,
     justifyContent: "center",
     alignItems: "center",
@@ -27,5 +29,3 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
 });
-
-export default HomeScreenItem;

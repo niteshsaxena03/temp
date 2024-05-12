@@ -4,10 +4,10 @@ import HomeScreenItem from "../components/HomeScreenItem";
 function HomeScreenItems(){
     return (
         <View style={styles.outerContainer}>
-          <HomeScreenItem>First Item</HomeScreenItem>
-          <HomeScreenItem>Second Item</HomeScreenItem>  
-          <HomeScreenItem>Third Item</HomeScreenItem> 
-          <HomeScreenItem>Fourth Item</HomeScreenItem> 
+          <HomeScreenItem>Home Item 1</HomeScreenItem>
+          <HomeScreenItem>Home Item 2</HomeScreenItem>  
+          <HomeScreenItem>Home Item 3</HomeScreenItem> 
+          <HomeScreenItem>Home Item 4</HomeScreenItem> 
         </View>
     )
 }
