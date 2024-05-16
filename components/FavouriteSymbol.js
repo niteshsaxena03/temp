@@ -1,13 +1,19 @@
 import { Pressable, StyleSheet, View } from "react-native";
 import {MaterialIcons} from '@expo/vector-icons';
+import {useState} from 'react';
 
 function FavouriteSymbol(){
+    const [isPressed,setIsPressed]=useState(false);
+
+    const starPressedHandler=()=>{
+      setIsPressed(!isPressed);
+    }
     return (
-      <Pressable>
+      <Pressable onPress={starPressedHandler}>
         {({ pressed }) => (
           <View style={[styles.outerContainer, { opacity: pressed ? 0.6 : 1 }]}>
             <MaterialIcons
-              name={pressed ? "star" : "star-border"}
+              name={isPressed ? "star" : "star-border"}
               size={60}
               color='blue'
             />
