@@ -5,7 +5,9 @@ function HomeScreenItem({children}) {
   return (
     <View style={styles.itemContainer}>
       <Text style={styles.textContainer}>{children}</Text>
-      <FavouriteSymbol/>
+      <View style={styles.favouriteContainer}>
+        <FavouriteSymbol/>
+      </View>
     </View>
   );
 }
@@ -26,6 +28,11 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: "bold",
   },
+  favouriteContainer:{
+     alignItems:'center',
+     justifyContent:'center',
+     marginBottom:'12%'
+  }
 });
 
 export default HomeScreenItem;
