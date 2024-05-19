@@ -1,6 +1,7 @@
-import React from "react";
+import * as React from "react";
 import { StyleSheet } from "react-native";
-import { MaterialIcons } from "@expo/vector-icons";
+import {SymbolView} from 'expo-symbols';
+import { MaterialCommunityIcons,Ionicons } from "@expo/vector-icons";
 import HomeScreen from "./screens/HomeScreen";
 import WorkScreen from "./screens/WorkScreen";
 import { NavigationContainer } from "@react-navigation/native";
@@ -8,6 +9,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreenItems from "./screens/HomeScreenItems";
 import WorkScreenItems from "./screens/WorkScreenItems";
+import FavouriteScreen from "./screens/FavouriteScreen";
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -16,7 +18,7 @@ const HomeStack = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Home "
+        name="Home"
         component={HomeScreen}
         options={{
           headerShown: false,
@@ -52,16 +54,19 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator
+        initialRouteName="Home"
         screenOptions={{
-          tabBarStyle: { backgroundColor: "#FFC0CB" }, 
+          tabBarActiveTintColor: "blue",
+          tabBarStyle: { backgroundColor: "#FFC0CB" },
         }}
       >
         <Tab.Screen
           name="Home Screen"
           component={HomeStack}
           options={{
+            tabBarLabel: "Home",
             tabBarIcon: ({ color, size }) => (
-              <MaterialIcons name="home" size={size} color={color} />
+              <Ionicons name="home" colors={color} size={size} />
             ),
             headerStyle: {
               backgroundColor: "#B0E0E6",
@@ -72,12 +77,27 @@ export default function App() {
           name="Work Screen"
           component={WorkStack}
           options={{
+            tabBarLabel: "Work",
             tabBarIcon: ({ color, size }) => (
-              <MaterialIcons name="work" size={size} color={color} />
+              <MaterialCommunityIcons
+                name="briefcase"
+                color={color}
+                size={size}
+              />
             ),
             headerStyle: {
               backgroundColor: "#FFD700",
             },
+          }}
+        />
+        <Tab.Screen
+          name="Favourites Screen"
+          component={FavouriteScreen}
+          options={{
+            tabBarLabel: "Favorite",
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons name="heart" size={size} color={color} />
+            ),
           }}
         />
       </Tab.Navigator>
