@@ -1,4 +1,6 @@
 import { View, Text } from "react-native";
+import { useDispatch,useSelector } from "react-redux";
+import { removeFavorite } from "../features/HomeSlice";
 
 function FavouriteScreen() {
   return (

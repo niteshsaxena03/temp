@@ -16,9 +16,9 @@ export const homeSlice = createSlice({
       state.favoriteItems.push(temp);
     },
     removeFavorite: (state, action) => {
-      const { id } = action.payload;
+      const { text } = action.payload;
       state.favoriteItems = state.favoriteItems.filter(
-        (item) => item.id !== id
+        (item) => item.text !== text
       );
     },
   },
