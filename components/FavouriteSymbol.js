@@ -28,8 +28,8 @@ export default FavouriteSymbol;
 const styles=StyleSheet.create({
     outerContainer:{
       flex:1,
-      marginTop:'35%',
-      marginLeft:'20%',
+      justifyContent:'center',
       alignItems:'center',
+      padding:10,
     },
 })

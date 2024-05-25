@@ -1,6 +1,5 @@
 import * as React from "react";
 import { StyleSheet } from "react-native";
-import {SymbolView} from 'expo-symbols';
 import { MaterialCommunityIcons,Ionicons } from "@expo/vector-icons";
 import HomeScreen from "./screens/HomeScreen";
 import WorkScreen from "./screens/WorkScreen";
@@ -10,6 +9,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreenItems from "./screens/HomeScreenItems";
 import WorkScreenItems from "./screens/WorkScreenItems";
 import FavouriteScreen from "./screens/FavouriteScreen";
+import { Provider } from "react-redux";
+import { reduxStore } from "./store/redux";
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -52,56 +53,58 @@ const WorkStack = () => {
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Tab.Navigator
-        initialRouteName="Home"
-        screenOptions={{
-          tabBarActiveTintColor: "blue",
-          tabBarStyle: { backgroundColor: "#FFC0CB" },
-        }}
-      >
-        <Tab.Screen
-          name="Home Screen"
-          component={HomeStack}
-          options={{
-            tabBarLabel: "Home",
-            tabBarIcon: ({ color, size }) => (
-              <Ionicons name="home" colors={color} size={size} />
-            ),
-            headerStyle: {
-              backgroundColor: "#B0E0E6",
-            },
+    <Provider store={reduxStore}>
+      <NavigationContainer>
+        <Tab.Navigator
+          initialRouteName="Home"
+          screenOptions={{
+            tabBarActiveTintColor: "blue",
+            tabBarStyle: { backgroundColor: "#FFC0CB" },
           }}
-        />
-        <Tab.Screen
-          name="Work Screen"
-          component={WorkStack}
-          options={{
-            tabBarLabel: "Work",
-            tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons
-                name="briefcase"
-                color={color}
-                size={size}
-              />
-            ),
-            headerStyle: {
-              backgroundColor: "#FFD700",
-            },
-          }}
-        />
-        <Tab.Screen
-          name="Favourites Screen"
-          component={FavouriteScreen}
-          options={{
-            tabBarLabel: "Favorite",
-            tabBarIcon: ({ color, size }) => (
-              <Ionicons name="heart" size={size} color={color} />
-            ),
-          }}
-        />
-      </Tab.Navigator>
-    </NavigationContainer>
+        >
+          <Tab.Screen
+            name="Home Screen"
+            component={HomeStack}
+            options={{
+              tabBarLabel: "Home",
+              tabBarIcon: ({ color, size }) => (
+                <Ionicons name="home" colors={color} size={size} />
+              ),
+              headerStyle: {
+                backgroundColor: "#B0E0E6",
+              },
+            }}
+          />
+          <Tab.Screen
+            name="Work Screen"
+            component={WorkStack}
+            options={{
+              tabBarLabel: "Work",
+              tabBarIcon: ({ color, size }) => (
+                <MaterialCommunityIcons
+                  name="briefcase"
+                  color={color}
+                  size={size}
+                />
+              ),
+              headerStyle: {
+                backgroundColor: "#FFD700",
+              },
+            }}
+          />
+          <Tab.Screen
+            name="Favourites Screen"
+            component={FavouriteScreen}
+            options={{
+              tabBarLabel: "Favorite",
+              tabBarIcon: ({ color, size }) => (
+                <Ionicons name="heart" size={size} color={color} />
+              ),
+            }}
+          />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 }
 
