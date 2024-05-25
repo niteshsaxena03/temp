@@ -10,7 +10,7 @@ import HomeScreenItems from "./screens/HomeScreenItems";
 import WorkScreenItems from "./screens/WorkScreenItems";
 import FavouriteScreen from "./screens/FavouriteScreen";
 import { Provider } from "react-redux";
-import { reduxStore } from "./store/redux";
+
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -53,7 +53,7 @@ const WorkStack = () => {
 
 export default function App() {
   return (
-    <Provider store={reduxStore}>
+
       <NavigationContainer>
         <Tab.Navigator
           initialRouteName="Home"
@@ -104,7 +104,7 @@ export default function App() {
           />
         </Tab.Navigator>
       </NavigationContainer>
-    </Provider>
+    
   );
 }
 
