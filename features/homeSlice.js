@@ -1,7 +1,7 @@
 import { createSlice,nanoid } from "@reduxjs/toolkit";
 
 const initialState = {
-  favoriteItems: [{ id: 1, text: "Favorite" }],
+  favoriteItems: [],
 };
 
 export const homeSlice = createSlice({

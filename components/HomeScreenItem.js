@@ -8,7 +8,7 @@ function HomeScreenItem({ children }) {
         {children}
       </Text>
       <View style={styles.favouriteContainer}>
-        <FavouriteSymbol />
+        <FavouriteSymbol inputText={children}/>
       </View>
     </View>
   );
