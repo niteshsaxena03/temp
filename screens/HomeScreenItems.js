@@ -40,7 +40,7 @@ function HomeScreenItems() {
         data={data}
         renderItem={renderItem}
         keyExtractor={(item) => item.key}
-        ListEmptyComponent={<Text>No items available</Text>}
+        ListEmptyComponent={<Text style={styles.listEmpty}>No Items Available</Text>}
       />
     </View>
   );
@@ -60,4 +60,12 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     paddingHorizontal: 10,
   },
+  listEmpty:{
+    color:'red',
+    fontSize:20,
+    textAlign:'center',
+    justifyContent:'center',
+    fontWeight:'bold',
+    marginTop:'50%'
+  }
 });
