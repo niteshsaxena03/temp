@@ -10,15 +10,15 @@ function FavouriteSymbol(){
     }
     return (
       <Pressable onPress={starPressedHandler}>
-        {({ pressed }) => (
-          <View style={[styles.outerContainer, { opacity: pressed ? 0.6 : 1 }]}>
+    
+          <View style={[styles.outerContainer]}>
             <MaterialIcons
               name={isPressed ? "star" : "star-border"}
               size={60}
               color='blue'
             />
           </View>
-        )}
+       
       </Pressable>
     );
 }
