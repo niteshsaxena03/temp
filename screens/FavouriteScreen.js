@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, FlatList, Button } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFavorite } from "../features/HomeSlice";
+import FavouriteSymbol from "../components/FavouriteSymbol";
 
 function FavouriteScreen() {
   const dispatch = useDispatch();
@@ -20,11 +21,7 @@ function FavouriteScreen() {
         renderItem={({ item }) => (
           <View style={styles.itemContainer}>
             <Text style={styles.itemText}>{item.text}</Text>
-            <Button
-              title="Remove"
-              onPress={() => handleRemoveFavorite(item.text)}
-              color="red"
-            />
+            <FavouriteSymbol inputText={item.text}/>
           </View>
         )}
       />
@@ -54,13 +51,16 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: 10,
+    padding: 7,
     marginVertical: 5,
     borderWidth: 1,
-    borderColor: "#ccc",
+    borderColor: "red",
     borderRadius: 5,
+    borderWidth:6,
+    backgroundColor:'pink'
   },
   itemText: {
-    fontSize: 18,
+    fontSize: 23,
+    color:'black',
   },
 });
